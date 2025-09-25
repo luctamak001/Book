@@ -4,7 +4,7 @@ public class Book {
     // Hint: You need String title, String author, int pages, double price
     private String title;
     private String author;
-    private int pages;
+    private final int pages;
     private double price;
 
 
@@ -180,7 +180,7 @@ public class Book {
     public double getPricePerPage() {
         if (pages <= 0) {
             return 0.0;
-        }else{
+        } else {
             return price / pages;
         }
     }
@@ -208,7 +208,11 @@ public class Book {
      */
     @Override
     public String toString() {
-        return "" ;
+        return "Book:" +
+                "\"" + title + "\" " +
+                "by " + author + " (" +
+                pages + " pages, $" +
+                price + ')';
     }
 
     /**
